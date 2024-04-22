@@ -23,7 +23,7 @@ class _FormularioViewState extends State<FormularioView> {
 
   Future<void> fetchLanguage() async {
     var url = Uri.parse(
-        'https://3bcc-187-132-201-149.ngrok-free.app/api/lenguajes/${widget.idLanguage}');
+        'http://10.0.2.2:3000/api/lenguajes/${widget.idLanguage}');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {

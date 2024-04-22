@@ -17,7 +17,7 @@ class _MensajesViewState extends State<MensajesView> {
 
   Future<List<Map<String, dynamic>>> fetchMensajes() async {
     ResponseAPI responseAPI = await apiService.requestGet(
-      uri: 'https://3bcc-187-132-201-149.ngrok-free.app/api/mensajes',
+      uri: 'http://10.0.2.2:3000/api/mensajes',
     );
 
     if (responseAPI.status == 200) {
@@ -136,7 +136,7 @@ void showAlertDialogOptions(
                 onPressed: () async {
                   try {
                     ResponseAPI responseAPI = await apiService.requestDelete(
-                      uri: 'https://3bcc-187-132-201-149.ngrok-free.app/api/mensajes',
+                      uri: 'http://10.0.2.2:3000/api/mensajes',
                       id: mensaje['idmensajes'],
                     );
 
@@ -209,7 +209,7 @@ class _MessageUpdateState extends State<MessageUpdate> {
   void _actualizarMensaje() async {
     try {
       ResponseAPI responseAPI = await apiService.requestPut(
-        uri: 'https://3bcc-187-132-201-149.ngrok-free.app/api/mensajes',
+        uri: 'http://10.0.2.2:3000/api/mensajes',
         id: widget.message['idmensajes'],
         data: {
           "titulo": _tituloController.text,
@@ -309,7 +309,7 @@ class _MessageCreateState extends State<MessageCreate> {
   void _actualizarMensaje() async {
     try {
       ResponseAPI responseAPI = await apiService.requestPost(
-        uri: 'https://3bcc-187-132-201-149.ngrok-free.app/api/mensajes',
+        uri: 'http://10.0.2.2:3000/api/mensajes',
         data: {
           "titulo": _tituloController.text,
           "contenido": _contenidoController.text,

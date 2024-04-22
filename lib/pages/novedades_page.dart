@@ -58,7 +58,7 @@ class _NovedadesViewState extends State<NovedadesView> {
 
   Future<List<Novedad>> fetchNovedad() async {
     ResponseAPI responseAPI = await apiService.requestGet(
-      uri: 'https://3bcc-187-132-201-149.ngrok-free.app/api/novedades',
+      uri: 'http://10.0.2.2:3000/api/novedades',
     );
 
     if (responseAPI.status == 200) {
@@ -92,7 +92,7 @@ class _NovedadesViewState extends State<NovedadesView> {
                 );
                 if (map == null || map.isEmpty) return;
                 responseAPI = await apiService.requestPost(
-                  uri: 'https://3bcc-187-132-201-149.ngrok-free.app/api/novedades',
+                  uri: 'http://10.0.2.2:3000/api/novedades',
                   data: {
                     "nombre": map['nombre'],
                     "imgsrc": map['imgsrc'],
@@ -150,7 +150,7 @@ class _NovedadesViewState extends State<NovedadesView> {
                                 if (map == null || map.isEmpty) return;
 
                                 responseAPI = await apiService.requestPut(
-                                  uri: 'https://3bcc-187-132-201-149.ngrok-free.app/api/novedades',
+                                  uri: 'http://10.0.2.2:3000/api/novedades',
                                   id: novedad.id,
                                   data: {
                                     "nombre": map['nombre'],
@@ -172,7 +172,7 @@ class _NovedadesViewState extends State<NovedadesView> {
                             } else if (result == "delete") {
                               try {
                                 responseAPI = await apiService.requestDelete(
-                                  uri: 'https://3bcc-187-132-201-149.ngrok-free.app/api/novedades',
+                                  uri: 'http://10.0.2.2:3000/api/novedades',
                                   id: novedad.id,
                                 );
                                 messageScaffold(
